@@ -10,7 +10,6 @@ output:
 ```{r}
 library("cowplot")
 library("robin")
-library("gprege")
 my_network <- system.file("example/football.gml", package="robin")
 graph <- prepGraph(file=my_network, file.format="gml")
 graphRandom <- random(graph=graph)
@@ -42,53 +41,53 @@ robinFDATest(graph=graph, model1=comp$Mean1, model2=comp$Mean2, measure="vi")
 #Fig.6 VI measure for all algorithms
 ```{r}
 #1
-comp <- robinCompare(graph=graph, method1="louvain",
+comp <- robinCompare(graph=graph, method1="infomap",
                 method2="fastGreedy", measure="vi", type="independent")
 pdf(file= "PlotFastGreedy.pdf")
 plotRobin(graph=graph, model1=comp$Mean1, model2=comp$Mean2, measure="vi", 
-legend=c("louvain", "fastGreedy"), title="Louvain vs FastGreedy")
+legend=c("infomap", "fastGreedy"), title="Infomap vs FastGreedy")
 dev.off()
 #2
-comp <- robinCompare(graph=graph, method1="louvain",
+comp <- robinCompare(graph=graph, method1="infomap",
                 method2="walktrap", measure="vi", type="independent")
 pdf(file= "PlotWalktrap.pdf")
 plotRobin(graph=graph, model1=comp$Mean1, model2=comp$Mean2, measure="vi", 
-legend=c("louvain", "walktrap"), title="Louvain vs Walktrap")
+legend=c("infomap", "walktrap"), title="Infomap vs Walktrap")
 dev.off()
 #3
-comp <- robinCompare(graph=graph, method1="louvain",
+comp <- robinCompare(graph=graph, method1="infomap",
                 method2="labelProp", measure="vi", type="independent")
 pdf(file= "PlotLabelProp.pdf")
 plotRobin(graph=graph, model1=comp$Mean1, model2=comp$Mean2, measure="vi", 
-legend=c("louvain", "labelProp"), title="Louvain vs LabelProp")
+legend=c("infomap", "labelProp"), title="Infomap vs LabelProp")
 dev.off()
 #4
-comp <- robinCompare(graph=graph, method1="louvain",
+comp <- robinCompare(graph=graph, method1="infomap",
                 method2="leadingEigen", measure="vi", type="independent")
 pdf(file= "PlotLeadingEigen.pdf")
 plotRobin(graph=graph, model1=comp$Mean1, model2=comp$Mean2, measure="vi", 
-legend=c("louvain", "leadingEigen"), title="Louvain vs LeadingEigen")
+legend=c("infomap", "leadingEigen"), title="Infomap vs LeadingEigen")
 dev.off()
 #5
-comp <- robinCompare(graph=graph, method1="louvain",
-                method2="infomap", measure="vi", type="independent")
-pdf(file= "PlotInfomap.pdf")
+comp <- robinCompare(graph=graph, method1="infomap",
+                method2="louvain", measure="vi", type="independent")
+pdf(file= "PlotLouvain.pdf")
 plotRobin(graph=graph, model1=comp$Mean1, model2=comp$Mean2, measure="vi", 
-legend=c("louvain", "infomap"), title="Louvain vs Infomap")
+legend=c("infomap", "louvain"), title="Infomap vs Louvain")
 dev.off()
 #6
-comp <- robinCompare(graph=graph, method1="louvain",
+comp <- robinCompare(graph=graph, method1="infomap",
                 method2="edgeBetweenness", measure="vi", type="independent")
 pdf(file= "PlotEdgeBetwenness.pdf")
 plotRobin(graph=graph, model1=comp$Mean1, model2=comp$Mean2, measure="vi", 
-legend=c("louvain", "edgeBetweenness"), title="Louvain vs EdgeBetweenness")
+legend=c("infomap", "edgeBetweenness"), title="Infomap vs EdgeBetweenness")
 dev.off()
 #7
-comp <- robinCompare(graph=graph, method1="louvain",
+comp <- robinCompare(graph=graph, method1="infomap",
                 method2="spinglass", measure="vi", type="independent")
 pdf(file= "PlotSpinglass.pdf")
 plotRobin(graph=graph, model1=comp$Mean1, model2=comp$Mean2, measure="vi", 
-legend=c("louvain", "spinglass"), title="Louvain vs Spinglass")
+legend=c("infomap", "spinglass"), title="Infomap vs Spinglass")
 dev.off()
 
 ```
