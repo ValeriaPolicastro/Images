@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1569339589660.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2369209135",
+    "id" : "A3DB2FDD",
+    "lastKnownWriteTime" : 1571414462,
+    "last_content_update" : 1571414462391,
+    "path" : "~/Dropbox/CNR Tigem/Tutto per ROBIN/Paper-Robin/Figures Paper/Figure_Paper.Rmd",
+    "project_path" : "Figures Paper/Figure_Paper.Rmd",
+    "properties" : {
+        "cursorPosition" : "87,0",
+        "scrollLine" : "38"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
